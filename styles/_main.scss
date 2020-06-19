@@ -116,8 +116,10 @@ main {
 
                             &__tipo {
                                 margin-top: 5px;
+
                                 li {
                                     line-height: 22px;
+
                                     a {
                                         @include flexCenter;
                                         justify-content: start;
@@ -126,13 +128,14 @@ main {
                                         color: $textColor;
                                     }
                                 }
-                                li:hover{
+
+                                li:hover {
                                     background: $filterSelectionColor;
                                 }
                             }
                         }
 
-                        .filtro:nth-child(2){
+                        .filtro:nth-child(2) {
                             margin-top: 14px;
                         }
                     }
@@ -149,6 +152,7 @@ main {
 
                             &__imagen {
                                 width: 260px;
+                                padding-bottom: 0px;
                             }
                         }
                     }
