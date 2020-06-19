@@ -1,0 +1,42 @@
+footer {
+    height: 161px;
+    width: 100%;
+    margin-top: 70px;
+    background: $navColor;
+    @include flexCenter;
+
+    ul {
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        li {
+            a {
+                font-size: 16px;
+                font-weight: 300;
+                color: white;
+                letter-spacing: 0.32px;
+            }
+        }
+
+    }
+}
+
+/*======================
+        DESKTOP 
+======================*/
+@media screen and (min-width: 1024px) {
+    footer {
+        height: 58px;
+
+        ul {
+            width: 600px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+    }
+}

@@ -1,0 +1,464 @@
+@charset "UTF-8";
+/*REGLAS GENERALES*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+* ul {
+  list-style: none;
+}
+
+* a {
+  text-decoration: none;
+  color: white;
+}
+
+.burger-opened {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/*======================
+        MOBILE
+======================*/
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 69px;
+  width: 100%;
+  background: #24182b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__top {
+  width: 93%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav__top__iconos {
+  display: none;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.nav__top__iconos a:nth-child(1) {
+  margin-right: 25vw;
+}
+
+.nav__top__iconos a:nth-child(2) {
+  margin-left: 25vw;
+}
+
+.nav__top__iconos.iconos-show {
+  display: block;
+}
+
+.nav__top__burger__icono {
+  color: white;
+  cursor: pointer;
+}
+
+.nav__bottom {
+  position: fixed;
+  left: 0;
+  top: 69px;
+  background: #24182b;
+  color: white;
+  letter-spacing: 1px;
+  border-top: 2px solid white;
+  height: 100vh;
+  width: 100%;
+  -webkit-clip-path: circle(100px at 10% -20%);
+          clip-path: circle(100px at 10% -20%);
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.nav__bottom.open {
+  -webkit-clip-path: circle(1500px at 10% -20%);
+          clip-path: circle(1500px at 10% -20%);
+}
+
+.nav__bottom li:nth-child(1) {
+  margin-top: 120px;
+  border-top: 1px solid white;
+}
+
+.nav__bottom li {
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.nav__bottom li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 60px;
+}
+
+/*======================
+    MOBILE LANDSCAPE 
+======================*/
+/*ARREGLA UN BUG EN EL CLIP PATH CUANDO EL TELÉFONO ESTÁ EN LANDSCAPE*/
+@media screen and (orientation: landscape) {
+  .nav__bottom {
+    -webkit-clip-path: circle(100px at 10% -30%);
+            clip-path: circle(100px at 10% -30%);
+  }
+  .nav__bottom li:nth-child(1) {
+    margin-top: 100px;
+  }
+  .nav__bottom li a {
+    height: 45px;
+  }
+}
+
+/*======================
+        DESKTOP 
+======================*/
+@media screen and (min-width: 1024px) {
+  .nav {
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .nav__top__burger {
+    width: 87.2px;
+  }
+  .nav__top__logo svg {
+    width: 206px;
+  }
+  .nav__top__iconos {
+    all: unset;
+    margin-top: 14px;
+  }
+  .nav__top__iconos a:nth-child(1) {
+    margin: 0;
+  }
+  .nav__top__iconos a:nth-child(1) svg {
+    width: 24px;
+  }
+  .nav__top__iconos a:nth-child(2) {
+    margin: 0 8px 0 8px;
+  }
+  .nav__top__iconos a:nth-child(2) svg {
+    width: 21px;
+  }
+  .nav__top__burger__icono {
+    display: none;
+  }
+  .nav__bottom {
+    all: unset;
+    color: white;
+    width: 804px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 10px;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+  }
+  .nav__bottom li:nth-child(1) {
+    all: unset;
+    font-weight: 600;
+  }
+  .nav__bottom li {
+    all: unset;
+  }
+  .nav__bottom li a {
+    all: unset;
+    cursor: pointer;
+  }
+}
+
+/*======================
+        MOBILE
+======================*/
+main {
+  padding: 0 20px;
+  margin-top: 80px;
+}
+
+main .container-filtros {
+  display: none;
+}
+
+main .producto {
+  margin-bottom: 32px;
+}
+
+main .producto__imagen {
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding-bottom: 15px;
+}
+
+main .producto__descripcion {
+  font-size: 20px;
+  letter-spacing: 0.4px;
+}
+
+main .producto__descripcion__nombre {
+  margin: 5px 0;
+}
+
+main .producto__descripcion__precio {
+  font-weight: 600;
+}
+
+/*======================
+        TABLET   
+======================*/
+@media screen and (min-width: 768px) {
+  main {
+    padding: 52px 60px 0 60px;
+    margin-top: 0;
+  }
+  main .container-productos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .container-productos .caja-productos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main .container-productos .caja-productos .producto {
+    padding: 15px;
+    width: 50%;
+  }
+}
+
+/*======================
+        DESKTOP 
+======================*/
+@media screen and (min-width: 1024px) {
+  body {
+    background: #fafafa;
+  }
+  body main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #030B1C;
+    margin-top: 90px;
+  }
+  body main .container-main {
+    width: 1088px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body main .container-main .container-filtros {
+    width: 260px;
+    display: block;
+  }
+  body main .container-main .container-filtros h1 {
+    font-size: 24px;
+    letter-spacing: 0.48px;
+  }
+  body main .container-main .container-filtros hr {
+    border: 0.1px solid rgba(0, 0, 0, 0.555);
+    margin: 7.5px 0 16.5px 0;
+  }
+  body main .container-main .container-filtros .caja-filtros__texto-filtrar {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+  }
+  body main .container-main .container-filtros .caja-filtros .filtro {
+    margin: 10px 0;
+    letter-spacing: 0.32px;
+  }
+  body main .container-main .container-filtros .caja-filtros .filtro h2 {
+    font-size: 16px;
+  }
+  body main .container-main .container-filtros .caja-filtros .filtro__titulo {
+    background: #e4e8ee;
+    padding: 5px 0px 5px 16px;
+  }
+  body main .container-main .container-filtros .caja-filtros .filtro__tipo {
+    margin-top: 5px;
+  }
+  body main .container-main .container-filtros .caja-filtros .filtro__tipo li {
+    line-height: 22px;
+  }
+  body main .container-main .container-filtros .caja-filtros .filtro__tipo li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    width: 100%;
+    padding-left: 16px;
+    color: #030B1C;
+  }
+  body main .container-main .container-filtros .caja-filtros .filtro__tipo li:hover {
+    background: #c9c9c9;
+  }
+  body main .container-main .container-filtros .caja-filtros .filtro:nth-child(2) {
+    margin-top: 14px;
+  }
+  body main .container-main .container-productos {
+    width: 812px;
+  }
+  body main .container-main .container-productos .caja-productos .producto {
+    padding: 0;
+    width: 260px;
+  }
+  body main .container-main .container-productos .caja-productos .producto__imagen {
+    width: 260px;
+  }
+}
+
+footer {
+  height: 161px;
+  width: 100%;
+  margin-top: 70px;
+  background: #24182b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer ul {
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+footer ul li a {
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.32px;
+}
+
+/*======================
+        DESKTOP 
+======================*/
+@media screen and (min-width: 1024px) {
+  footer {
+    height: 58px;
+  }
+  footer ul {
+    width: 600px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

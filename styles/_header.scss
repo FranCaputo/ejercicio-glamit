@@ -1,0 +1,177 @@
+/*======================
+        MOBILE
+======================*/
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 69px;
+    width: 100%;
+    background: $navColor;
+    @include flexCenter;
+
+    &__top {
+        width: 93%;
+        @include flexCenter;
+        justify-content: space-between;
+
+        &__iconos {
+            display: none;
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            transition: all 0.4s ease-out;
+
+            a:nth-child(1) {
+                margin-right: 25vw;
+            }
+
+            a:nth-child(2) {
+                margin-left: 25vw;
+            }
+
+            &.iconos-show {
+                display: block;
+            }
+        }
+
+        &__burger {
+            &__icono {
+                color: white;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    &__bottom {
+        position: fixed;
+        left: 0;
+        top: 69px;
+        background: $navColor;
+        color: white;
+        letter-spacing: 1px;
+        border-top: 2px solid white;
+        height: 100vh;
+        width: 100%;
+        clip-path: circle(100px at 10% -20%);
+        transition: all 0.4s ease-out;
+    }
+
+    &__bottom.open {
+        clip-path: circle(1500px at 10% -20%);
+    }
+
+    &__bottom li:nth-child(1) {
+        margin-top: 120px;
+        border-top: 1px solid white;
+    }
+
+    &__bottom li {
+        text-align: center;
+        border-bottom: 1px solid white;
+
+        a {
+            @include flexCenter;
+            width: 100%;
+            height: 60px;
+        }
+    }
+}
+
+/*======================
+    MOBILE LANDSCAPE 
+======================*/
+/*ARREGLA UN BUG EN EL CLIP PATH CUANDO EL TELÉFONO ESTÁ EN LANDSCAPE*/
+@media screen and (orientation: landscape) {
+    .nav__bottom {
+        clip-path: circle(100px at 10% -30%);
+
+        li:nth-child(1) {
+            margin-top: 100px;
+        }
+        li a{
+            height: 45px;
+        }
+    }
+}
+
+/*======================
+        DESKTOP 
+======================*/
+@media screen and (min-width: 1024px) {
+
+    .nav {
+        height: 100px;
+        @include flexCenter;
+        flex-direction: column;
+
+        &__top {
+            &__burger {
+                width: 87.2px;
+            }
+
+            &__logo {
+                svg {
+                    width: 206px;
+                }
+            }
+
+            &__iconos {
+                all: unset;
+                margin-top: 14px;
+
+                a:nth-child(1) {
+                    margin: 0;
+
+                    svg {
+                        width: 24px;
+                    }
+                }
+
+                a:nth-child(2) {
+                    margin: 0 8px 0 8px;
+
+                    svg {
+                        width: 21px;
+                    }
+                }
+            }
+
+            &__burger {
+                &__icono {
+                    display: none;
+                }
+            }
+        }
+
+        &__bottom {
+            all: unset;
+            color: white;
+            width: 804px;
+            @include flexCenter;
+            justify-content: space-between;
+            padding-top: 10px;
+            font-size: 20px;
+            letter-spacing: 0.4px;
+            font-weight: 400;
+        }
+
+        &__bottom li:nth-child(1) {
+            all: unset;
+            font-weight: 600;
+        }
+
+        &__bottom li {
+            all: unset;
+
+            a {
+                all: unset;
+                cursor: pointer;
+            }
+        }
+    }
+
+}

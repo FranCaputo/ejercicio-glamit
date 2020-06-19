@@ -1,0 +1,29 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+
+/*REGLAS GENERALES*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.burger-opened{
+    height: 100vh;
+    overflow: hidden;
+}
+
+@import "./_header.scss";
+@import "./_main.scss";
+@import "./_footer.scss";
