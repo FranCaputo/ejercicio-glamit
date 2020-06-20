@@ -6,6 +6,9 @@ const iconos = document.querySelector(".nav__top__iconos");
 const divCarrito = document.querySelector(".nav__top__carrito");
 const carrito = document.querySelector(".nav__top__carrito__icono");
 
+const hoverProduct = document.querySelector(".producto");
+const productImage = document.querySelector(".producto__imagen");
+
 //FUNCIONAMIENTO DE MENÚ HAMBURGUESA/MOBILE
 burger.addEventListener("click", () => {
   burgerSubMenu.classList.toggle("open");
@@ -15,7 +18,13 @@ burger.addEventListener("click", () => {
 });
 
 //ADJUNTA EL CARRITO AL DIV GENERAL DE LOS ICONOS Y QUITA AL DIV DEL CARRITO 
-if (window.innerWidth > 768) {
-  iconos.appendChild(carrito);
-  divCarrito.style.display = "none";
-}
+
+window.setInterval(function () {
+  if (window.innerWidth > 1024) {
+    iconos.appendChild(carrito);
+    divCarrito.style.display = "none";
+  } else {
+    divCarrito.appendChild(carrito);
+    divCarrito.style.display = "block"
+  }
+}, 100);

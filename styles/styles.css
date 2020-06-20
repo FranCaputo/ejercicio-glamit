@@ -17,6 +17,7 @@
   color: white;
 }
 
+/*CLASES PARA JS*/
 .burger-opened {
   height: 100vh;
   overflow: hidden;
@@ -385,7 +386,7 @@ main .producto__descripcion__precio {
     color: #030B1C;
   }
   body main .container-main .container-filtros .caja-filtros .filtro__tipo li:hover {
-    background: #c9c9c9;
+    background: #e4e8ee;
   }
   body main .container-main .container-filtros .caja-filtros .filtro:nth-child(2) {
     margin-top: 14px;
@@ -399,6 +400,7 @@ main .producto__descripcion__precio {
   }
   body main .container-main .container-productos .caja-productos .producto__imagen {
     width: 260px;
+    padding-bottom: 0px;
   }
 }
 
