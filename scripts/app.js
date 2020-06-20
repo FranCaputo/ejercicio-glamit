@@ -25,6 +25,6 @@ window.setInterval(function () {
     divCarrito.style.display = "none";
   } else {
     divCarrito.appendChild(carrito);
-    divCarrito.style.display = "block"
+    divCarrito.style.display = "block";
   }
 }, 100);
